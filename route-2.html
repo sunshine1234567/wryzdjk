@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>站点信息</title>
+
+    <link rel="stylesheet" href="css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="css/select2.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/master.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/grid.locale-cn.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.ztree.all.js"></script>
+    <script src="js/ztree_option.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/select2_option.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <style>
+        .table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th{
+            padding:0px!important;height: 24px;line-height: 24px!important;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%;height: 100%;">
+    <div id="header"></div>
+    <div class="content" id="content">
+      <div id="menu"></div>
+    <div class="container-box container-double">
+        <div class="yuanBtn" >
+            <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
+        </div>
+        <div class="container-left">
+            <div class="A2-ztree" style="width: 100%;height: 80%">
+                <ul id="A3-first-tree" class="ztree" style="width: 100%;height: 100%;overflow: auto;"></ul>
+            </div>
+            <div class="row" style="height: 20%;">
+                <div class="fengexian70"></div>
+                <div class="col-lg-10 link_col10" style="">
+                    <div class="col-lg-6 padding10"><img src="img/link_green.png" alt="">正常</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_red.png" alt="">故障</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_black.png" alt="">停运</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-right">
+            <div id="map_container"></div>
+            <div class="tabletol">
+                <div class="row">
+                    <div class="col-lg-12 tabletoltitle">
+                        <img class="hidetable" src="img/hidemapT.png" alt="" onclick="hidetablefuc();">
+                        废水总排口-统计</div>
+                    <div class="col-lg-12">
+                        <div class="chartBoxA chartye">
+                            <table class="horTable" style="margin-top: 5px">
+                                <tr>
+                                    <td width="60" class="align-right">排放口：</td>
+                                    <td>
+                                        <select class="js-select140" class="select-normal" name=""运维评价>
+                                            <option value="">全部</option>
+                                        </select>
+                                    </td>
+                                    <td width="50" class="align-right">仓库：</td>
+                                    <td>
+                                        <select class="js-select140" class="select-normal" name=""运维评价>
+                                            <option value="">全部</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="A2-right jqT1" style="height: 165px;overflow: hidden">
+                    <div class="overhiddenBox">
+                        <div class="F5-form TA1">
+                            <table id="F16-form"></table>
+                            <div id="F16-form-pager"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div id="footer"></div>
+</body>
+<script src="js/datepicker_option.js"></script>
+<!--<script src="js/map_baidu12.js"></script>-->
+<script src="jqGrid/jqGrid_F16_form.js"></script>
+<script>
+    $("#header").load('header.html');
+    $("#footer").load('footer.html');
+    $("#menu").load('menu.html',function () {
+        $("#gis").addClass('activespan');
+    });
+    $(".ul-li-tab").click(function(){
+        $(".ul-li-tab").removeClass("ullitabcolor");
+        $(this).addClass("ullitabcolor");
+    })
+      function hidetablefuc(){
+         $(".chartye").parent().toggle();
+          $(".jqT1").toggle();
+          if($(".jqT1").is(":hidden")){
+              $(".hidetable").attr("src","img/showmapT.png");
+          }else {
+              $(".hidetable").attr("src","img/hidemapT.png");
+          }
+      }
+
+    function yuanBtnfunc(){
+        var ss = $(".container-left").width();
+        if (ss >10){
+            $(".container-left").css({"width":0,"border":"none"});
+            $(".container-right").css({"width":"100%","margin":0,"padding":0});
+            $(".yuanBtn").css({"left":"0.5%"});
+            $(".yuanBtn img").attr("src","img/yuan_right.png");
+            // $(".container-right").load()
+        }else {
+            $(".container-left").css({"width":"14%","border":"1px solid #d2d2d2"});
+            $(".container-right").css({"width":"85.7%"});
+            $(".yuanBtn").css({"left":"14.3%"});
+            $(".yuanBtn img").attr("src","img/yuan_left.png");
+        }
+    }
+</script>
+<script src="js/map_baidu12.js"></script>
+<script src="jqGrid/jqGrid_F15_form.js"></script>
+
+</html>

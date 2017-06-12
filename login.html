@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>登录页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/master.js"></script>
+</head>
+<body>
+<div class="containerbigbox" style="width:100%;height: 100%;background-color: #82b4e0;">
+    <header class="header login_header">
+        <div style="width: 96%;margin: 0 auto;">
+            <div class="logo"><img src="img/login_logo.png" alt=""></div>
+        </div>
+    </header>
+    <div class="content login_content" id="content">
+       <!-- <img src="img/login_bg.png" alt=""  style="position: absolute;bottom: 0;">-->
+        <div class="login_form">
+                <img src="img/login_form_showdow.png" alt="" style="position: absolute;bottom: 0;left: -126px;z-index: 998;">
+                <div class="login_form_content">
+                    <input class="login_form_input login_form_user" type="text" value="" placeholder="请输入用户名">
+                    <input class="login_form_input login_form_password" type="password"  value="" placeholder="请输入密码">
+                    <input class="login_form_input yanzhengma" type="text"  value="" placeholder="请输入验证码">
+                    <div class="yanzhengma_img">
+                        <img src="img/yanzhengma.png" alt="">
+                    </div>
+                    <input class="login_btn" type="button" value="登录" onclick="window.location.href='route-2.html'"><br>
+                    <label for="rempsw" class="rempswlabel"> <input id="rempsw" class="rempsw" type="radio">记住密码</label>
+                </div>
+
+            </div>
+        <div class="footer_login">
+            <div class="footer_login_content">
+                <img src="img/border-top-login.png" alt="">
+                <p style="text-align: center;font-size: 12px;color: #585858;">
+                    <img src="img/footer_login.png" alt="" style="margin-right: 5px;">http://www.wanweitech.com      c   2017WanWeiTech Corporation.All rights reserved. </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script>
+    var s = $(".containerbigbox").height();
+    var login_form_margintop =Math.floor((s -135 +100) * 0.1);
+
+    s = (s+100-135) + 'px';//login_content的高度
+    //alert(s)
+   // alert(login_form_margintop);
+    $(".login_content").css({"height":s,"top":"135px"});
+    login_form_margintop = login_form_margintop + 'px';
+    $(".login_form").css({"margin-top":login_form_margintop});
+
+</script>
+</html>

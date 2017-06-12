@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维评价</title>
+
+    <link rel="stylesheet" href="css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="css/select2.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/master.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/grid.locale-cn.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.ztree.all.js"></script>
+    <script src="js/ztree_option.js"></script>
+    <script src="js/select2.js"></script>
+
+    <script src="js/select2_option.js"></script>
+    <script src="js/echarts-all.js"></script>
+</head>
+<body>
+<div style="width:100%;height: 100%;">
+    <div id="header"></div>
+    <div class="content" id="content">
+       <div id="menu"></div>
+        <div class="container-box container-double">
+            <div class="yuanBtn" >
+                <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
+            </div>
+        <div class="container-left">
+            <div class="A2-ztree" style="width: 100%;height: 80%">
+                <ul id="A3-first-tree" class="ztree" style="width: 100%;height: 100%;overflow: auto;"></ul>
+            </div>
+            <div class="row" style="height: 20%;">
+                <div class="fengexian70"></div>
+                <div class="col-lg-10 link_col10" style="">
+                    <div class="col-lg-6 padding10"><img src="img/link_green.png" alt="">正常</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_red.png" alt="">故障</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_black.png" alt="">停运</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-right">
+
+            <div style="width: 100%;height: 100%;overflow-y: auto;overflow-x: hidden;">
+                <div class="row">
+                    <div class="col-xs-12" style="margin-top: 10px;height: 40px;">
+                        <div class="chartBoxA">
+                            <table class="horTable">
+                                <tr>
+                                    <td width="45">日期：</td>
+                                    <td width="190">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+                                    </td>
+                                    <td width="45">行业:</td>
+                                    <td width="120">
+                                        <select class="js-A1-slt1" class="select-normal" name=""运维评价>
+                                            <option>全部</option> <option>全部而非二个人个人股如果风格1</option>
+                                        </select>
+                                    </td>
+                                    <td width="70">控制级别:</td>
+                                    <td width="120">
+                                        <select class="js-A1-slt1" class="select-normal" name=""运维评价>
+                                            <option>全部</option> <option>全部而非二个人个人股如果风格1</option>
+                                        </select>
+                                    </td>
+                                    <td width="70">排放类型:</td>
+                                    <td width="120">
+                                        <select class="js-A1-slt1" class="select-normal" name=""运维评价>
+                                            <option value="">全部</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="buttonGrope-right margin0">
+                                            <input type="button" class="addbtn" value="导  出">
+                                            <input type="button" class="searchbtn" value="查  询">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="A2-right T1" style="height:60%;">
+                    <p class="titleF31">南京市2017-04运维评价报告</p>
+                    <div class="overhiddenBox" style="margin-top: 0;height: 100%;">
+                        <div class="F5-form TA1">
+                            <table id="F8-form" style="font-size: 12px;"></table>
+                            <div id="F8-form-pager"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" style="height:50%">
+                        <p class="titleE1">指标统计</p>
+                        <div class="col-xs-4 four-one">
+                            <div id="main1" style="width: 100%;height:100%"></div>
+                        </div>
+                        <div class="col-xs-4 four-one">
+                            <div id="main2" style="width: 100%;height:100%"></div>
+                        </div>
+                        <div class="col-xs-4 four-one">
+                            <div id="main3" style="width: 100%;height:100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" style="height:50%">
+                        <p class="titleE1">报警信息统计布局</p>
+                        <div class="col-xs-12 four-one">
+                            <div id="main4" style="width: 100%;height:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+<script>
+    $("#header").load('header.html');
+    $("#footer").load('footer.html');
+    $("#menu").load('menu.html',function () {
+        $("#estimate").addClass('activespan');
+    });
+    var ss = $(".A2-right").height();
+    var sss = (ss - 125) + 'px';
+    $(".overhiddenBox").css({"height":sss});
+    function yuanBtnfunc(){
+        var ss = $(".container-left").width();
+        if (ss >10){
+            $(".container-left").css({"width":0,"border":"none"});
+            $(".container-right").css({"width":"100%","margin":0,"padding":0});
+            $(".yuanBtn").css({"left":"0.5%"});
+            $(".container-right").load()
+        }else {
+            $(".container-left").css({"width":"14%","border":"1px solid #d2d2d2"});
+            $(".container-right").css({"width":"85.7%"});
+            $(".yuanBtn").css({"left":"14.3%"});
+        }
+    }
+
+
+</script>
+<script src="js/datepicker_option.js"></script>
+<script src="jqGrid/jqGrid_F8_form.js"></script>
+<script src="echarts/main1.js"></script>
+<script src="echarts/main2.js"></script>
+<script src="echarts/main3.js"></script>
+<script src="echarts/main4.js"></script>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远程维护</title>
+
+    <link rel="stylesheet" href="css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="css/select2.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/master.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/grid.locale-cn.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.ztree.all.js"></script>
+    <script src="js/ztree_option.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/select2_option.js"></script>
+</head>
+<style>
+    .table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th{
+        padding:0px!important;height: 30px;line-height: 30px!important;
+    }
+    #F7-form tbody , #F72-form tbody{
+        background-color: #b9d9f4;
+    }
+    .active{
+        background-color:#b9d9f4!important; ;
+    }
+</style>
+<body>
+<div style="width:100%;height: 100%;">
+    <div id="header"></div>
+    <div class="content" id="content">
+        <div id="menu"></div>
+    <div class="container-box container-double">
+        <div class="yuanBtn" >
+            <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
+        </div>
+        <div class="container-left">
+            <div class="A2-ztree" style="width: 100%;height: 80%">
+                <ul id="A3-first-tree" class="ztree" style="width: 100%;height: 100%;overflow: auto;"></ul>
+            </div>
+            <div class="row" style="height: 20%;">
+                <div class="fengexian70"></div>
+                <div class="col-lg-10 link_col10" style="">
+                    <div class="col-lg-6 padding10"><img src="img/link_green.png" alt="">正常</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_red.png" alt="">故障</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
+                    <div class="col-lg-6 padding10"><img src="img/link_black.png" alt="">停运</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-right">
+
+
+            <div class="row" style="width: 97%;margin: 0 auto;">
+                <div class="col-xs-12 ul-tab" style="padding-left: 5px">
+                    <div class="col-lg-3 remoteul-li-tab remoteul-li-tab1" onclick="zhefc()">万维盈创W5100HB-LLL-Z</div>
+                    <span style="position: absolute;left:190px;top: 10px;">|</span>
+                    <div class="col-lg-3 remoteul-li-tab remoteul-li-tab2" onclick="zhefc2()">怡文氨氮-EST2004</div>
+                </div>
+            </div>
+            <div class="row zhediebox zhediebox1">
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP remotTitlePfirst">远程诊断</p>
+                    <div class="col-lg-6 yuancheng remote5050">
+                        <div class="remoteimg1">
+                            <div>
+                                <img src="img/jiqi.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="remotebtngroup">
+                            <input type="button" value="运行状态更变记录">
+                            <input type="button" value="工作参数修改记录">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 yuancheng remote5050">
+                        <div class="A2-right T1">
+                          <!--  <div class="overhiddenBox">-->
+                                <div class="F5-form TA1" style="overflow: hidden">
+                                    <table id="F7-form"></table>
+                                    <div id="F7-form-pager"></div>
+                                </div>
+                         <!--   </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程控制</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程配置</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程升级</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <div></div>
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">服务器配置</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row zhediebox zhediebox2">
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP remotTitlePfirst">远程诊断</p>
+                    <div class="col-lg-6 yuancheng remote5050 remote50501">
+                        <div class="remoteimg1 remoteimg2">
+                            <div>
+                                <img src="img/jiqi2.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="remotebtngroup">
+                            <input type="button" value="运行状态更变记录">
+                            <input type="button" value="工作参数修改记录">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 yuancheng remote5050 remote50502">
+                        <div class="A2-right T1" style="height: 160px;">
+                            <!--  <div class="overhiddenBox">-->
+                            <div class="F5-form TA1" style="overflow: hidden">
+                                <table id="F72-form"></table>
+                                <div id="F72-form-pager"></div>
+                            </div>
+                            <!--   </div>-->
+                        </div>
+
+                        <div class="A2-right T1" style="height:258px;">
+                            <!--  <div class="overhiddenBox">-->
+                            <div class="F5-form TA1" style="overflow: hidden">
+                                <table id="F73-form"></table>
+                                <div id="F73-form-pager"></div>
+                            </div>
+                            <!--   </div>-->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程控制</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span class="jiaoshi">校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>及时采样</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>停止测量</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>启动清洗</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>空白标定</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>标液标定</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程配置</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">远程升级</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 remotecol12">
+                    <p class="remotTitleP">服务器配置</p>
+                    <div class="col-lg-12 yuancheng yuanGroup" style="display: none">
+                        <div class="yuanulli">
+                            <span>远程校时</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>远程重启</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>回传间隔</span>
+                        </div>
+                        <div class="yuanulli">
+                            <span>数据补传</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+<div id="footer"></div>
+</body>
+<script>
+    var ss = $(".container-right").height();
+    var sss = (ss - 175) + 'px';
+    $(".zhediebox").css({"height":sss});
+
+    $("#header").load('header.html');
+    $("#footer").load('footer.html');
+    $("#menu").load('menu.html',function () {
+        $("#remote").addClass('activespan');
+    });
+
+    /****************折叠效果开始*****************/
+  /* $(".yuancheng").hide();*/
+    $(".remotTitleP").click(function(){
+        if($(this).nextAll().is(":hidden")){
+            $(this).css({"background-image":"url(img/jt_top.png)"});
+            $(this).nextAll().show();
+          /*  $(this).html("收起");*/
+        }else{
+            $(this).css({"background-image":"url(img/jt_bottom.png)"});
+            $(this).nextAll().hide();
+        /*    $(this).html("展开")	;*/
+        }
+    });
+    /****************折叠效果结束*****************/
+
+
+    /****************远程控制点击开始*****************/
+
+    $(".yuanulli").click(function(){
+        var img = $(this).find(".imgRemote").src;
+        console.log(img)
+       /* var filename;
+        if(path.indexOf("/")>0){
+            filename=path.substring(path.lastIndexOf("/")+1,path.length);
+        }else{
+            filename=path;
+        }
+        alert(filename)*/
+    })
+    /****************远程控制点击结束*****************/
+
+    function yuanBtnfunc(){
+        var ss = $(".container-left").width();
+        if (ss >10){
+            $(".container-left").css({"width":0,"border":"none"});
+            $(".container-right").css({"width":"100%","margin":0,"padding":0});
+            $(".yuanBtn").css({"left":"0.5%"});
+            $(".yuanBtn img").attr("src","img/yuan_right.png");
+            // $(".container-right").load()
+        }else {
+            $(".container-left").css({"width":"14%","border":"1px solid #d2d2d2"});
+            $(".container-right").css({"width":"85.7%"});
+            $(".yuanBtn").css({"left":"14.3%"});
+            $(".yuanBtn img").attr("src","img/yuan_left.png");
+        }
+    }
+</script>
+<script src="js/datepicker_option.js"></script>
+<script src="jqGrid/jqGrid_F7_form.js"></script>
+<script src="jqGrid/jqGrid_F72_form.js"></script>
+<script src="jqGrid/jqGrid_F73_form.js"></script>
+</html>

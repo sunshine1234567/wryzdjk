@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>企业档案</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="css/select2.css">
+	<link rel="stylesheet" href="css/ui.jqgrid-bootstrap.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.jqGrid.min.js"></script>
+	<script src="js/grid.locale-cn.js"></script>
+
+	<style>
+		.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th{
+			padding:0px!important;height:36px;line-height:36px!important;
+		}
+	</style>
+
+	<style>
+		.dialog-330 .modal-dialog .modal-content .modal-footer{
+			display: block!important;
+			border: none;
+			padding-top: 0px;
+		}
+		.dialog-330 .modal-dialog .modal-content .modal-body{
+			padding-top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-xs-12" >
+			<div class="col-xs-12" style="height: 40px;line-height:40px;border-bottom: 2px solid #dddddd;padding-top:12px;padding-left: 0;">
+				<div class="qiyelu qiyelu1 qiyelucolor">企业基本信息</div>
+				<div class="qiyelu qiyelu2">建设项目环评信息</div>
+				<div class="qiyelu qiyelu3">企业排污许可证信息</div>
+				<div class="qiyelu qiyelu4">污染源监测验收相关信息</div>
+				<div class="qiyelu qiyelu5">突发环境事件应急预案</div>
+				<div class="qiyelu qiyelu6">其他补充资料</div>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="modalsix modalone">
+		<div class="A2-right T1" style="margin-top: 10px;height: 290px;width: 1070px;overflow: hidden">
+			<!--	<div class="overhiddenBox">-->
+			<div class="F5-form TA1">
+				<table id="F107-form"></table>
+				<div id="F107-form-pager"></div>
+			</div>
+			<!--	</div>-->
+		</div>
+	</div>
+	<div class="modalsix modaltwo" style="display: none">
+		<div class="row">
+			<div class="col-xs-12" style="margin-top: 10px;height: 40px;">
+				<div class="chartBoxA">
+					<table class="horTable" style="width: 100%">
+						<tr>
+							<td width="80" class="align-right">开始时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">结束时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">项目名称：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td colspan="2">
+								<div class="buttonGrope-right margin0">
+									<input type="button" class="addbtn" value="上传">
+									<input type="button" class="searchbtn" value="查  询">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="A2-right T1">
+		<!--	<div class="overhiddenBox">-->
+				<div class="F5-form TA1">
+					<table id="F101-form"></table>
+					<div id="F101-form-pager"></div>
+				</div>
+		<!--	</div>-->
+
+		</div>
+
+
+	</div>
+	<div class="modalsix modalthree" style="display: none">
+		<div class="row">
+			<div class="col-xs-12" style="margin-top: 10px;height: 40px;">
+				<div class="chartBoxA">
+					<table class="horTable" style="width: 100%">
+						<tr>
+							<td width="80" class="align-right">开始时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">结束时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="120" class="align-right">排污许可证名称：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td colspan="2">
+								<div class="buttonGrope-right margin0">
+									<input type="button" class="addbtn" value="上传">
+									<input type="button" class="searchbtn" value="查  询">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="A2-right T1">
+			<!--	<div class="overhiddenBox">-->
+			<div class="F5-form TA1">
+				<table id="F102-form"></table>
+				<div id="F102-form-pager"></div>
+			</div>
+			<!--	</div>-->
+
+		</div>
+
+
+	</div>
+	<div class="modalsix modalfour" style="display: none">
+		<div class="row">
+			<div class="col-xs-12" style="margin-top: 10px;height: 40px;">
+				<div class="chartBoxA">
+					<table class="horTable" style="width: 100%">
+						<tr>
+							<td width="80" class="align-right">开始时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">结束时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="120" class="align-right">验收资料名称：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td colspan="2">
+								<div class="buttonGrope-right margin0">
+									<input type="button" class="addbtn" value="上传">
+									<input type="button" class="searchbtn" value="查  询">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="A2-right T1">
+			<!--	<div class="overhiddenBox">-->
+			<div class="F5-form TA1">
+				<table id="F103-form"></table>
+				<div id="F103-form-pager"></div>
+			</div>
+			<!--	</div>-->
+
+		</div>
+
+
+	</div>
+	<div class="modalsix modalfive" style="display: none;">
+		<div class="row">
+			<div class="col-xs-12" style="margin-top: 10px;height:80px;">
+				<div class="chartBoxA">
+					<table class="horTable" style="width: 100%">
+						<tr>
+							<td width="80" class="align-right">开始时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">结束时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+						</tr>
+						<tr>
+							<td width="120" class="align-right">预备预案名称：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td width="120" class="align-right">预备预案编号：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td colspan="2">
+								<div class="buttonGrope-right margin0" style="margin-right: 20px;">
+									<input type="button" class="addbtn" value="上传">
+									<input type="button" class="searchbtn" value="查  询">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="A2-right T5">
+			<!--	<div class="overhiddenBox">-->
+			<div class="F5-form TA5">
+				<table id="F104-form"></table>
+				<div id="F104-form-pager"></div>
+			</div>
+			<!--	</div>-->
+
+		</div>
+	</div>
+	<div class="modalsix modalsixth" style="display: none">
+		<div class="row">
+			<div class="col-xs-12" style="margin-top: 10px;height: 40px;">
+				<div class="chartBoxA">
+					<table class="horTable" style="width: 100%">
+						<tr>
+							<td width="80" class="align-right">开始时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">结束时间：</td>
+							<td width="180">
+                                <span>
+                                    <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
+							        <img src="img/calendar.png" class="calendary-icon">
+						        </span>
+							</td>
+							<td width="80" class="align-right">资料名称：</td>
+							<td width="120">
+								<span><input type="text"></span>
+							</td>
+							<td colspan="2">
+								<div class="buttonGrope-right margin0">
+									<input type="button" class="addbtn" value="上传">
+									<input type="button" class="searchbtn" value="查  询">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="A2-right T1">
+			<!--	<div class="overhiddenBox">-->
+			<div class="F5-form TA1">
+				<table id="F105-form"></table>
+				<div id="F105-form-pager"></div>
+			</div>
+			<!--	</div>-->
+
+		</div>
+
+
+	</div>
+</body>
+<script src="js/datepicker_option.js"></script>
+<script src="jqGrid/jqGrid_F101_form.js"></script>
+<script src="jqGrid/jqGrid_F102_form.js"></script>
+<script src="jqGrid/jqGrid_F103_form.js"></script>
+<script src="jqGrid/jqGrid_F104_form.js"></script>
+<script src="jqGrid/jqGrid_F105_form.js"></script>
+<script src="jqGrid/jqGrid_F107_form.js"></script>
+<script>
+	$(".qiyelu").click(function(){
+		$(".qiyelu").removeClass("qiyelucolor");
+		$(this).addClass("qiyelucolor");
+	});
+	$(".qiyelu1").click(function(){
+		$(".modalsix").hide();
+		$(".modalone").show();
+	});
+
+	$(".qiyelu2").click(function(){
+		$(".modalsix").hide();
+		$(".modaltwo").show();
+	});
+	$(".qiyelu3").click(function(){
+		$(".modalsix").hide();
+		$(".modalthree").show();
+	});
+	$(".qiyelu4").click(function(){
+		$(".modalsix").hide();
+		$(".modalfour").show();
+	});
+	$(".qiyelu5").click(function(){
+		$(".modalsix").hide();
+		$(".modalfive").show();
+	});
+	$(".qiyelu6").click(function(){
+		$(".modalsix").hide();
+		$(".modalsixth").show();
+	})
+/*	var ss = $(".T5").height();
+	var sss = (ss - 1) + 'px';
+	$(".A2-right").css({"height":sss});*/
+
+</script>
+</html>
