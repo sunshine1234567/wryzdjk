@@ -42,19 +42,19 @@
                             <tr>
                                 <td class="align-right">设备类型：</td>
                                 <td>
-                                    <select class="js-select150" class="select-normal" name="运维评价">
+                                    <select class="js-select160" class="select-normal" >
                                         <option value="">全部</option>
                                     </select>
                                 </td>
                                 <td class="align-right">设备品牌：</td>
                                 <td>
-                                    <select class="js-select150" class="select-normal" name="运维评价">
+                                    <select class="js-select160" class="select-normal" >
                                         <option value="">全部</option>
                                     </select>
                                 </td>
                                 <td class="align-right">设备型号：</td>
                                 <td>
-                                    <select class="js-select150" class="select-normal" name="运维评价">
+                                    <select class="js-select160" class="select-normal" >
                                         <option value="">全部</option>
                                     </select>
                                 </td>
@@ -102,6 +102,10 @@
     /*var s = $(".TA1").width();
     s = (s+2)+ 'px';
     $(".TA1").css({"width":s});*/
+    $(".js-select160").select2({
+        width: "160px",
+        minimumResultsForSearch: Infinity
+    });
 
 </script>
 <script src="js/datepicker_option.js"></script>
