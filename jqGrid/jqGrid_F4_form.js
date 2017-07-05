@@ -1,6 +1,6 @@
 
 var F4_form_width = $('.F5-form').width();
-var F4_form_height = $('.F5-form').height()-80;
+var F4_form_height = $('.F5-form').height()-100;
 /*var overhiddenBoxHeight = (F4_form_height + 80) + 'px';
 $(".overhiddenBox").css({"height":overhiddenBoxHeight});*/
 $("#F4-form").jqGrid({

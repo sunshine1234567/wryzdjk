@@ -23,12 +23,12 @@ $(function(){
 		    message: $("<div></div>").load("./add-device.html"),
 		    buttons: [
 				{
-	                label: '确定',
+	                label: '确&nbsp;&nbsp;&nbsp;定',
 	                action: function(dialog){
 	                	dialog.close();
 	                }
 	            }, {
-	                label: '返回',
+	                label: '返&nbsp;&nbsp;&nbsp;回',
 	                action: function(dialogItself){
 	                    dialogItself.close();
 	                }
@@ -67,12 +67,12 @@ $(function(){
 		    message: $("<div></div>").load("./add-Material.html"),
 		    buttons: [
 				{
-	                label: '确定',
+	                label: '确&nbsp;&nbsp;&nbsp;定',
 	                action: function(dialog){
 	                	dialog.close();
 	                }
 	            }, {
-	                label: '返回',
+	                label: '返&nbsp;&nbsp;&nbsp;回',
 	                action: function(dialogItself){
 	                    dialogItself.close();
 	                }

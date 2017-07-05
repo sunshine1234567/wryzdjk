@@ -1,6 +1,6 @@
 
 var F73_form_width = $('.F5-form').width();
-var F73_form_height = $('.F5-form').height() -80;
+var F73_form_height = $('.F5-form').height();
 /*alert(F52_form_height)
  var overhiddenBoxHeight1 = (F52_form_height + 80) + 'px';
  $(".overhiddenBox").css({"height":overhiddenBoxHeight1});*/

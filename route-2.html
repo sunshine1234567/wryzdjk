@@ -34,9 +34,7 @@
     <div class="content" id="content">
       <div id="menu"></div>
     <div class="container-box container-double">
-        <div class="yuanBtn" >
-            <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
-        </div>
+
         <div class="container-left">
             <div class="A2-ztree" style="width: 100%;height: 80%">
                 <ul id="A3-first-tree" class="ztree" style="width: 100%;height: 100%;overflow: auto;"></ul>
@@ -44,35 +42,38 @@
             <div class="row" style="height: 20%;">
                 <div class="fengexian70"></div>
                 <div class="col-lg-10 link_col10" style="">
-                    <div class="col-lg-6 padding10"><img src="img/link_green.png" alt="">正常</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_red.png" alt="">故障</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_black.png" alt="">停运</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_green.png" alt="">正常</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_red.png" alt="">故障</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_black.png" alt="">停运</div>
                 </div>
             </div>
         </div>
 
         <div class="container-right">
-            <div id="map_container"></div>
+            <div class="yuanBtn" >
+                <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
+            </div>
+            <div id="pagemap2" style="width: 100%;height: 100%;"></div>
             <div class="tabletol">
                 <div class="row">
-                    <div class="col-lg-12 tabletoltitle">
+                    <div class="col-lg-12 col-xs-12 tabletoltitle">
                         <img class="hidetable" src="img/hidemapT.png" alt="" onclick="hidetablefuc();">
                         废水总排口-统计</div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-xs-12">
                         <div class="chartBoxA chartye">
                             <table class="horTable" style="margin-top: 5px">
                                 <tr>
-                                    <td width="60" class="align-right">排放口：</td>
+                                    <td width="80" class="align-right">行业类型：</td>
                                     <td>
-                                        <select class="js-select140" class="select-normal" >
+                                        <select class="js-select140" class="select-normal" name=""运维评价>
                                             <option value="">全部</option>
                                         </select>
                                     </td>
-                                    <td width="50" class="align-right">仓库：</td>
+                                    <td width="80" class="align-right">控制级别：</td>
                                     <td>
-                                        <select class="js-select140" class="select-normal" >
+                                        <select class="js-select140" class="select-normal" name=""运维评价>
                                             <option value="">全部</option>
                                         </select>
                                     </td>
@@ -102,11 +103,15 @@
 <!--<script src="js/map_baidu12.js"></script>-->
 <script src="jqGrid/jqGrid_F16_form.js"></script>
 <script>
-    $("#header").load('header.html');
-    $("#footer").load('footer.html');
-    $("#menu").load('menu.html',function () {
-        $("#gis").addClass('activespan');
+    $(document).ready(function(){
+        $("#header").load('header.html');
+        $("#footer").load('footer.html');
+        $("#pagemap2").load('pagemap.html');
+        $("#menu").load('menu.html',function () {
+            $("#gis").addClass('activespan');
+        });
     });
+
     $(".ul-li-tab").click(function(){
         $(".ul-li-tab").removeClass("ullitabcolor");
         $(this).addClass("ullitabcolor");
@@ -126,14 +131,15 @@
         if (ss >10){
             $(".container-left").css({"width":0,"border":"none"});
             $(".container-right").css({"width":"100%","margin":0,"padding":0});
-            $(".yuanBtn").css({"left":"0.5%"});
+            $(".link_col10").hide();
             $(".yuanBtn img").attr("src","img/yuan_right.png");
-            // $(".container-right").load()
+            $("#pagemap2").load('pagemap.html');
         }else {
             $(".container-left").css({"width":"14%","border":"1px solid #d2d2d2"});
             $(".container-right").css({"width":"85.7%"});
-            $(".yuanBtn").css({"left":"14.3%"});
+            $(".link_col10").show();
             $(".yuanBtn img").attr("src","img/yuan_left.png");
+            $("#pagemap2").load('pagemap.html');
         }
     }
 </script>

@@ -8,37 +8,37 @@ $("#F1071-form").jqGrid({
     datatype: function (data) {
         var thegrid = jQuery("#F1071-form")[0];
         data = eval("(" +'{"page":1,"total":2,"records":13,"rows":['
-            + '{"方格1":"<div class=\'bggrel\'>设备类型</div>","方格2":"江苏省","方格3":"<div class=\'bggrel\'>企业名称</div>","方格4":"江苏春刚特有限公司"}'
-            +',{"方格1":"<div class=\'bggrel\'>设备品牌</div>","方格2":"江苏省","方格3":"<div class=\'bggrel\'>设备型号</div>","方格4":"江苏春刚特有限公司"}'
-            +',{"方格1":"<div class=\'bggrel\'>生产商</div>","方格2":"江苏省","方格3":"<div class=\'bggrel\'>生产商联系人</div>","方格4":"江苏春刚特有限公司"}'
-            +',{"方格1":"<div class=\'bggrel\'>联系电话</div>","方格2":"江苏省","方格3":"<div class=\'bggrel\'>联系邮箱</div>","方格4":"江苏春刚特有限公司"}'
-            +',{"方格1":"<div class=\'bggrel\'>备注</div>","方格2":"江苏省","方格3":"<div class=\'bggrel\'>企业名称</div>","方格4":"江苏春刚特有限公司"}'
-            +',{"方格1":"<div class=\'bggrel pictd\'>产品证书图片</div>","方格2":"","方格3":"<div class=\'bggrel\'></div>","方格4":""}'
+            + '{"ctn1":"<div class=\'bggrel\'>设备类型</div>","ctn2":"数采仪","ctn3":"<div class=\'bggrel\'>企业名称</div>","ctn4":"数采仪"}'
+            +',{"ctn1":"<div class=\'bggrel\'>设备品牌</div>","ctn2":"智能环保数采仪","ctn3":"<div class=\'bggrel\'>设备型号</div>","ctn4":"W5100HB-III-Z"}'
+            +',{"ctn1":"<div class=\'bggrel\'>生产商</div>","ctn2":"北京万维赢创科技发展有限公司","ctn3":"<div class=\'bggrel\'>生产商联系人</div>","ctn4":"闫涛"}'
+            +',{"ctn1":"<div class=\'bggrel\'>联系电话</div>","ctn2":"15823982146","ctn3":"<div class=\'bggrel\'>联系邮箱</div>","ctn4":"yan_tao@wanweitech.com"}'
+            +',{"ctn1":"<div class=\'bggrel\'>备注</div>","ctn2":"","ctn3":"<div class=\'bggrel\'>企业名称</div>","ctn4":"江苏春刚特有限公司"}'
+            +',{"ctn1":"<div class=\'bggrel pictd\'>产品证书图片</div>","ctn2":"","ctn3":"<div class=\'bggrel\'></div>","ctn4":""}'
             + "]})");
         thegrid.addJSONData(data);//给div添加json格式的数据
     },
     mtype: "GET",
     styleUI : 'Bootstrap',
-    colNames: ['方格1', '方格2', '方格3','方格4'],
+    colNames: ['ctn1', 'ctn2', 'ctn3','ctn4'],
     colModel: [
-        { name: '方格1', index: '方格1', align: 'center',width:'60',
+        { name: 'ctn1', index: 'ctn1', align: 'center',width:'60',
             cellattr: function(rowId, tv, rawObject, cm, rdata) {//合并单元格
-                return 'id=\'方格1' + rowId +"\'";
+                return 'id=\'ctn1' + rowId +"\'";
             }
         },
-        { name: '方格2',   index: '方格2',   align: 'center',width:'120',
+        { name: 'ctn2',   index: 'ctn2',   align: 'center',width:'120',
             cellattr: function(rowId, tv, rawObject, cm, rdata) {//合并单元格
-                return 'id=\'方格2' + rowId +"\'";
+                return 'id=\'ctn2' + rowId +"\'";
             }
         },
-        { name: '方格3',     index: '方格3',     align: 'center',width:'60',
+        { name: 'ctn3',     index: 'ctn3',     align: 'center',width:'60',
             cellattr: function(rowId, tv, rawObject, cm, rdata) {//合并单元格
-                return 'id=\'方格3' + rowId +"\'";
+                return 'id=\'ctn3' + rowId +"\'";
             }
         },
-        { name: '方格4',     index: '方格4',     align: 'center',width:'120',
+        { name: 'ctn4',     index: 'ctn4',     align: 'center',width:'120',
             cellattr: function(rowId, tv, rawObject, cm, rdata) {//合并单元格
-                return 'id=\'方格4' + rowId +"\'";
+                return 'id=\'ctn4' + rowId +"\'";
             }
         }
     ],
@@ -53,7 +53,7 @@ $("#F1071-form").jqGrid({
         $(this).closest('.ui-jqgrid-view').find('div.ui-jqgrid-hdiv').hide();
         //②在gridComplete调用合并方法
         var gridName = "F1071-form";
-        Merger4(gridName, '方格2');
+        Merger4(gridName, 'ctn2');
     }
 });
 
@@ -62,24 +62,24 @@ function Merger4(gridName, CellName) {
     var mya = $("#" + gridName + "").getDataIDs();
     /************************/
     $("#" + CellName + "" + mya[4] + "").attr("colspan", 3);
-    $("#" + gridName + "").setCell(mya[4], '方格3', '', {
+    $("#" + gridName + "").setCell(mya[4], 'ctn3', '', {
         display: 'none'
     });
-    $("#" + gridName + "").setCell(mya[4], '方格4', '', {
+    $("#" + gridName + "").setCell(mya[4], 'ctn4', '', {
         display: 'none'
     });
     $("#" + CellName + "" + mya[0] + "").attr("colspan", 3);
-    $("#" + gridName + "").setCell(mya[0], '方格3', '', {
+    $("#" + gridName + "").setCell(mya[0], 'ctn3', '', {
         display: 'none'
     });
-    $("#" + gridName + "").setCell(mya[0], '方格4', '', {
+    $("#" + gridName + "").setCell(mya[0], 'ctn4', '', {
         display: 'none'
     });
     $("#" + CellName + "" + mya[5] + "").attr("colspan", 3);
-    $("#" + gridName + "").setCell(mya[5], '方格3', '', {
+    $("#" + gridName + "").setCell(mya[5], 'ctn3', '', {
         display: 'none'
     });
-    $("#" + gridName + "").setCell(mya[5], '方格4', '', {
+    $("#" + gridName + "").setCell(mya[5], 'ctn4', '', {
         display: 'none'
     });
 

@@ -17,9 +17,13 @@ var A3_first_zNodes =[
 	{ id:12, pId:1, name:"天津",isParent:true,open:true},
 	{ id:121, pId:12, name:"山西废水",isParent:true,open:true},
 	{ id:1211, pId:121, name:"废水排口", iconSkin:"grer"},
-	{ id:1211, pId:121, name:"废水排口", iconSkin:"yelloww"},
-	{ id:1211, pId:121, name:"废水排口", iconSkin:"greene"},
-	{ id:1211, pId:121, name:"废水排口", iconSkin:"gre"},
+	{ id:1212, pId:121, name:"废水排口", iconSkin:"yelloww"},
+	{ id:1213, pId:121, name:"废水排口", iconSkin:"greene"},
+	{ id:1214, pId:121, name:"废水排口", iconSkin:"gre"},
+	{ id:1215, pId:121, name:"废水排口", iconSkin:"grer"},
+	{ id:1216, pId:121, name:"废水排口", iconSkin:"yelloww"},
+	{ id:1217, pId:121, name:"废水排口", iconSkin:"greene"},
+	{ id:1218, pId:121, name:"废水排口", iconSkin:"gre"},
 	{ id:13, pId:1, name:"河北区域", isParent:true,open:false},
 	{ id:14, pId:1, name:"江苏区域", isParent:true,open:false}
 

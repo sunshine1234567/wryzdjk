@@ -42,19 +42,19 @@
                             <tr>
                                 <td class="align-right">设备类型：</td>
                                 <td>
-                                    <select class="js-select160" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
                                 <td class="align-right">设备品牌：</td>
                                 <td>
-                                    <select class="js-select160" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
                                 <td class="align-right">设备型号：</td>
                                 <td>
-                                    <select class="js-select160" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
@@ -64,7 +64,7 @@
                                 </td>
                                 <td colspan="2">
                                     <div class="buttonGrope-right margin0" style="float: left">
-                                        <input type="button" class="addbtn js-alarm-networking-edit" value="导  出">
+                                        <input type="button" class="addbtn" value="导  出">
                                         <input type="button" class="searchbtn" value="查  询">
                                     </div>
                                 </td>
@@ -91,6 +91,7 @@
 <div id="footer"></div>
 </body>
 <script>
+
     $("#header").load('header.html');
     $("#footer").load('footer.html');
     $("#menu").load('menu.html',function () {
@@ -102,10 +103,6 @@
     /*var s = $(".TA1").width();
     s = (s+2)+ 'px';
     $(".TA1").css({"width":s});*/
-    $(".js-select160").select2({
-        width: "160px",
-        minimumResultsForSearch: Infinity
-    });
 
 </script>
 <script src="js/datepicker_option.js"></script>

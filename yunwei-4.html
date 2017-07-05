@@ -28,37 +28,38 @@
     <div class="content" id="content">
       <div id="menu"></div>
     <div class="container-box container-double">
-        <div class="yuanBtn" >
-            <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
-        </div>
+
         <div class="container-left">
             <div class="A2-ztree" style="width: 100%;height: 80%">
                 <ul id="A3-first-tree" class="ztree" style="width: 100%;height: 100%;overflow: auto;"></ul>
             </div>
-            <div class="row" style="height: 20%;">
+            <div class="row" style="height: 20%">
                 <div class="fengexian70"></div>
                 <div class="col-lg-10 link_col10" style="">
-                    <div class="col-lg-6 padding10"><img src="img/link_green.png" alt="">正常</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_red.png" alt="">故障</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
-                    <div class="col-lg-6 padding10"><img src="img/link_black.png" alt="">停运</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_green.png" alt="">正常</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_red.png" alt="">故障</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_yellow.png" alt="">超标</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_gre.png" alt="">离线</div>
+                    <div class="col-lg-6 col-xs-6 padding10"><img src="img/link_black.png" alt="">停运</div>
                 </div>
             </div>
         </div>
 
         <div class="container-right">
+            <div class="yuanBtn" >
+                <img src="img/yuan_left.png" alt="" onclick="yuanBtnfunc()">
+            </div>
             <div class="row" style="width: 97%;margin: 0 auto;">
                 <div class="col-xs-12 ul-tab">
-                    <div class="col-lg-1 ul-li-tab ullitabcolor">巡检</div>
-                    <div class="col-lg-1 ul-li-tab">维护</div>
-                    <div class="col-lg-2 ul-li-tab">配件更换</div>
-                    <div class="col-lg-2 ul-li-tab">试剂更换</div>
-                    <div class="col-lg-1 ul-li-tab">校准</div>
-                    <div class="col-lg-2 ul-li-tab">对比质控</div>
-                    <div class="col-lg-2 ul-li-tab">废液回收</div>
-                    <div class="col-lg-2 ul-li-tab">标气更换</div>
-                    <div class="col-lg-2 ul-li-tab">故障报告</div>
+                    <div class="col-lg-1 col-xs-1 ul-li-tab ullitabcolor">巡检</div>
+                    <div class="col-lg-1 col-xs-1 ul-li-tab">维护</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">配件更换</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">试剂更换</div>
+                    <div class="col-lg-1 col-xs-1 ul-li-tab">校准</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">对比质控</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">废液回收</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">标气更换</div>
+                    <div class="col-lg-2 col-xs-2 ul-li-tab">故障报告</div>
                 </div>
             </div>
             <div class="row"><!--列表 开始-->
@@ -66,38 +67,38 @@
                     <div class="chartBoxA">
                         <table class="horTable">
                             <tr>
-                                <td width="70">开始时间：</td>
+                                <td style="width: 70px;">开始时间：</td>
                                 <td width="170">
                                 <span>
                                     <input type="text" value="2016-07-09" id="A2-start-time" class="time-style">
 							        <img src="img/calendar.png" class="calendary-icon">
 						        </span>
                                 </td>
-                                <td width="70">结束时间：</td>
-                                <td width="170">
+                                <td style="width: 70px;">结束时间：</td>
+                                <td style="width: 70px;">
                                 <span>
                                     <input type="text" value="2016-07-10" id="A2-end-time" class="time-style">
 							        <img src="img/calendar.png" class="calendary-icon">
 						        </span>
                                 </td>
-                                <td width="70">行业类别:</td>
+                                <td style="width: 70px;">行业类别:</td>
                                 <td width="170">
-                                    <select class="js-select150" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                     <option>全部</option> <option>全部而非二个人个人股如果风格1</option>
                                     </select>
                                 </td>
-                                <td width="70">控制级别:</td>
+                                <td style="width: 70px;">控制级别:</td>
                                 <td width="170">
-                                    <select class="js-select150" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
-                                <td width="70"></td>
+                                <td style="width: 70px;"></td>
                             </tr>
                             <tr>
                                 <td>排放类型：</td>
                                 <td>
-                                    <select class="js-select150" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
@@ -105,7 +106,7 @@
                                 <td><span><input type="text" value=""></span></td>
                                 <td>运维结果：</td>
                                 <td>
-                                    <select class="js-select150" class="select-normal" >
+                                    <select class="js-select150" class="select-normal" name=""运维评价>
                                         <option value="">全部</option>
                                     </select>
                                 </td>
@@ -125,14 +126,7 @@
 
                 </div>
             </div><!--列表 结束-->
-            <div class="A2-right T1">
-                <div class="overhiddenBox">
-                    <div class="F5-form TA1">
-                        <table id="F2-form" style="font-size: 12px;"></table>
-                        <div id="F2-form-pager"></div>
-                    </div>
-                </div>
-
+            <div id="pagetable4" class="A2-right T1">
             </div>
         </div>
 
@@ -143,11 +137,17 @@
 <div id="footer"></div>
 </body>
 <script>
-    $("#header").load('header.html');
-    $("#footer").load('footer.html');
-    $("#menu").load('menu.html',function () {
-        $("#yunwei").addClass('activespan');
+    $(document).ready(function(){
+        $("#header").load('header.html');
+        $("#footer").load('footer.html');
+        $("#pagetable4").load('pageTable4.html');
+        $("#menu").load('menu.html',function () {
+            $("#yunwei").addClass('activespan');
+        });
     });
+
+
+
     $(".ul-li-tab").click(function(){
         $(".ul-li-tab").removeClass("ullitabcolor");
         $(this).addClass("ullitabcolor");
@@ -162,14 +162,15 @@
         if (ss >10){
             $(".container-left").css({"width":0,"border":"none"});
             $(".container-right").css({"width":"100%","margin":0,"padding":0});
-            $(".yuanBtn").css({"left":"0.5%"});
+            $(".link_col10").hide();
             $(".yuanBtn img").attr("src","img/yuan_right.png");
-            // $(".container-right").load()
+            $("#pagetable4").load('pageTable4.html');
         }else {
             $(".container-left").css({"width":"14%","border":"1px solid #d2d2d2"});
             $(".container-right").css({"width":"85.7%"});
-            $(".yuanBtn").css({"left":"14.3%"});
+            $(".link_col10").show();
             $(".yuanBtn img").attr("src","img/yuan_left.png");
+            $("#pagetable4").load('pageTable4.html');
         }
     }
 </script>

@@ -22,6 +22,9 @@ var sContent =
 
 map = new BMap.Map("map_container");
 map.centerAndZoom(new BMap.Point(121.48,31.22), 5);
+/*map.addControl(new BMap.MapTypeControl());*/
+map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
 var data_info = [[121.48,31.22,"hang"], [113.23,23.16,"nan"],[108.95,34.27,"西安"],[104.06,30.67,"cheng"]];
 var opts = {
     width : 490,     // 信息窗口宽度

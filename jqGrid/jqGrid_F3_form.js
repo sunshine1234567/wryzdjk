@@ -29,7 +29,7 @@ $("#F3-form").jqGrid({
         { label: '报警信息', name: 'ctn5', align: "center", width:25},
         { label: '报警开始时间', name: 'ctn6', align: "center", width: 18 },
         { label: '报警结束时间', name: 'ctn7', align: "center", width: 18 },
-        { label: '持续时长', name: 'ctn8', align: "center", width: 15 },
+        { label: '持续时长(min)', name: 'ctn8', align: "center", width: 20 },
         { label: '处理人', name: 'ctn9', align: "center", width: 12 },
         { label: '处理结果', name: 'ctn10', align: "center", width: 15 },
         { label: '报警状态', name: 'ctn11', align: "center", width: 15 },

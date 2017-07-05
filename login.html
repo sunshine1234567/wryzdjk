@@ -57,5 +57,16 @@
     login_form_margintop = login_form_margintop + 'px';
     $(".login_form").css({"margin-top":login_form_margintop});
 
+    $(".login_form_user").focus(function(){
+        $(this).css({"border":"1px solid #6ebeff","background":"url(img/user_2.png) no-repeat 10px 8px"});
+    }).blur(function(){
+        $(this).css({"border":"1px solid #dedcdc","background":"url(img/user_1.png) no-repeat 10px 8px"});
+    })
+    $(".login_form_password").focus(function(){
+        $(this).css({"border":"1px solid #6ebeff","background":"url(img/psw_2.png) no-repeat 10px 8px"});
+    }).blur(function(){
+        $(this).css({"border":"1px solid #dedcdc","background":"url(img/psw_1.png) no-repeat 10px 8px"});
+    })
+
 </script>
 </html>
